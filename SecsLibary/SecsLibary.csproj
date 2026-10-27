@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FECEAB1E-0B1E-4611-A2A3-6310A03293E9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SecsLibary</RootNamespace>
+    <AssemblyName>SecsLibary</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ConvertFormt, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Secs-Master-Example\bin\Debug\ConvertFormt.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Secs-Socket, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Secs-Socket.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActiveSendView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActiveSendView.Designer.cs">
+      <DependentUpon>ActiveSendView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\CreateDataID.cs" />
+    <Compile Include="Common\JsonHelper.cs" />
+    <Compile Include="Common\SetSystemDateTime.cs" />
+    <Compile Include="DataItem\ALARM.cs" />
+    <Compile Include="DataItem\CEID.cs" />
+    <Compile Include="DataItem\DataList.cs" />
+    <Compile Include="DataItem\ECID.cs" />
+    <Compile Include="DataItem\PPBody.cs" />
+    <Compile Include="DataItem\PPID.cs" />
+    <Compile Include="DataItem\RCMD.cs" />
+    <Compile Include="DataItem\RPTID.cs" />
+    <Compile Include="BaseData\SList.cs" />
+    <Compile Include="EQPManger.cs" />
+    <Compile Include="EQP\S10F04.cs" />
+    <Compile Include="EQP\S1F02.cs" />
+    <Compile Include="EQP\S1F12.cs" />
+    <Compile Include="EQP\S1F14.cs" />
+    <Compile Include="EQP\S1F04.cs" />
+    <Compile Include="EQP\S1F16.cs" />
+    <Compile Include="EQP\S1F18.cs" />
+    <Compile Include="EQP\S2F14.cs" />
+    <Compile Include="EQP\S2F34.cs" />
+    <Compile Include="EQP\S2F36.cs" />
+    <Compile Include="EQP\S2F38.cs" />
+    <Compile Include="EQP\S2F42.cs" />
+    <Compile Include="EQP\S2F32.cs" />
+    <Compile Include="EQP\S2F18.cs" />
+    <Compile Include="EQP\S2F44.cs" />
+    <Compile Include="EQP\S5F04.cs" />
+    <Compile Include="EQP\S5F06.cs" />
+    <Compile Include="EQP\S5F08.cs" />
+    <Compile Include="EQP\S7F02.cs" />
+    <Compile Include="EQP\S7F06.cs" />
+    <Compile Include="EQP\S7F18.cs" />
+    <Compile Include="EQP\S7F20.cs" />
+    <Compile Include="EQP\S7F04.cs" />
+    <Compile Include="EQP\S9F7.cs" />
+    <Compile Include="EQP_ACTIVE\ActiveStream.cs" />
+    <Compile Include="ErrorMessage.cs" />
+    <Compile Include="EQP_SECS_Data.cs" />
+    <Compile Include="Function\IValueChanged.cs" />
+    <Compile Include="Function\ValueChangeBool.cs" />
+    <Compile Include="Function\ValueChangedInt.cs" />
+    <Compile Include="Function\ValueChangedIntArray.cs" />
+    <Compile Include="Host\S1F03.cs" />
+    <Compile Include="ISend.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IResponse.cs" />
+    <Compile Include="DataItem\SVID.cs" />
+    <Compile Include="DataItem\VID.cs" />
+    <Compile Include="SecsRemember.cs" />
+    <Compile Include="SecsConfig.cs" />
+    <Compile Include="SECSView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SECSView.Designer.cs">
+      <DependentUpon>SECSView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SECS_Action.cs" />
+    <Compile Include="Views\TIDView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TIDView.Designer.cs">
+      <DependentUpon>TIDView.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ActiveSendView.resx">
+      <DependentUpon>ActiveSendView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SECSView.resx">
+      <DependentUpon>SECSView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TIDView.resx">
+      <DependentUpon>TIDView.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
